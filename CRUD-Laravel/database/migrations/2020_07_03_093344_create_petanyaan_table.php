@@ -15,6 +15,8 @@ class CreatePetanyaanTable extends Migration
     {
         Schema::create('petanyaan', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('isi');
             $table->timestamps();
         });
     }

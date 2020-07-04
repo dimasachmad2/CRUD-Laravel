@@ -15,6 +15,8 @@ class CreateJawabanTable extends Migration
     {
         Schema::create('jawaban', function (Blueprint $table) {
             $table->id();
+            $table->string('isi');
+            $table->bigInteger('id_pertanyaan');
             $table->timestamps();
         });
     }
