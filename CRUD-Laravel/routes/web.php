@@ -13,18 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/master', function(){
-    return view('adminLTE.master');
-});
-
-Route::get('/', function(){
-    return view('data.tabel');
-});
-
-Route::get('/data-tables', function(){
-    return view('data.tabel-data');
-});
+Route::get('/items/create', 'ItemController@create'); //menampilkan halaman form
+Route::post('/items', 'ItemController@store'); //menyimpan data
+Route::get('/items', 'ItemController@index'); //menampilkan data
