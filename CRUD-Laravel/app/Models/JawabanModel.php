@@ -18,4 +18,18 @@ Class JawabanModel{
         $jawaban_by_id = DB::table('jawaban')->where('id_pertanyaan',$id)->get();
         return $jawaban_by_id;
     }
+
+    public static function find_by_id_first($id){
+        $jawaban_by_id = DB::table('jawaban')->where('id',$id)->first();
+        return $jawaban_by_id;
+    }
+
+    public static function update($id,$request){
+        $jawaban_update = DB::table('jawaban')
+        ->where('id',$id)
+        ->update([
+            'isi' => $request['isi']
+        ]);
+        return $jawaban_update;
+    }
 }

@@ -16,11 +16,13 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>No</th>
+                      <th>#</th>
                       <th>Name</th>
                       <th>Description</th>
                       <th>Stock</th>
                       <th>Price</th>
+                      <th>Category</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -31,6 +33,16 @@
                       <td>{{ $item->description }}</td>
                       <td>{{ $item->stock }}</td>
                       <td>{{ $item->price }}</td>
+                      <td>{{ $item->category->name }}</td>
+                      <td>
+                        <a href="/items/{{ $item->id }}" class="btn btn-outline-info">Show</a>
+                        <a href="/items/{{ $item->id }}/edit" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>
+                        <form action="/items/{{$item->id}}" method="post" style="display:inline">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-outline-danger btn-md"><i class="fas fa-trash"></i></button>
+                        </form>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>

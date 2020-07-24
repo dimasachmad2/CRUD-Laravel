@@ -19,6 +19,9 @@ class CreateItemsTable extends Migration
             $table->string('description')->nullable();
             $table->integer('stock')->nullable();
             $table->integer('price')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
@@ -30,6 +33,10 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        // Schema::dropIfExists('items');
+        Schema::table('items', function (Blueprint $table){
+            $table->dropForeign(['category_id']);
+            $table->dropColumn(['category_id']);
+        });
     }
 }

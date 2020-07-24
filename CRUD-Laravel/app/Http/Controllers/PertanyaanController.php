@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//model custom
 use App\Models\PertanyaanModel;
+//model eloquent
+use App\pertanyaan;
+
 
 class PertanyaanController extends Controller
 {

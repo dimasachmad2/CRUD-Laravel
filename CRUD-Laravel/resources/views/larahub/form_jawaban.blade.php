@@ -11,7 +11,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="id_pertanyaan">Id Pertanyaan</label>
-                <input type="number"  class="form-control" name="id_pertanyaan" id="id_pertanyaan" placeholder="">
+                <input type="number"  class="form-control" name="id_pertanyaan" id="id_pertanyaan" value="{{$id_pertanyaan}}" placeholder="">
             </div>
             <div class="form-group">
                 <label for="isi">Isi Jawaban</label>

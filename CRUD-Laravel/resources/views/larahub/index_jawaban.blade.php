@@ -6,7 +6,7 @@
               <div class="card-header">
                 <h3 class="card-title p-1">Jawaban Dari Pertanyaan {{$id_pertanyaan}}</h3>
                 <div class="card-tools">
-                    <a href="/jawaban" class="btn btn-primary btn-sm">Tambah</a>
+                    <a href="/jawaban/{{$id_pertanyaan}}/create" class="btn btn-primary btn-sm">Tambah</a>
                     <a href="/pertanyaan" class="btn btn-danger btn-sm">Kembali</a>
                 </div>
               </div>
@@ -17,6 +17,7 @@
                     <tr>
                       <th>No</th>
                       <th>Isi</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -24,6 +25,9 @@
                     <tr>
                       <td>{{ $key+1 }}</td>
                       <td>{{ $jawab->isi }}</td>
+                      <td>
+                        <a href="/jawaban/{{$jawab->id}}/edit" class="btn btn-info btn-sm text-white">Edit</a>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>
